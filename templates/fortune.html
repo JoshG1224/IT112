@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Fortune Teller</title>
+</head>
+<body>
+    <h1>Fortune Teller</h1>
+	<h4> Enter your information and receive a fortune.
+
+    <form method="POST" action="/fortune">
+        <label>Name:</label><br>
+        <input type="text" name="user" required><br><br>
+
+        <label>Pick a color:</label><br>
+        <select name="color">
+            <option>red</option>
+            <option>yellow</option>
+            <option>blue</option>
+            <option>green</option>
+        </select><br><br>
+
+        <label>Pick a number:</label><br>
+        <select name="number">
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+			<option>6</option>
+			<option>7</option>
+			<option>8</option>
+			<option>9</option>
+        </select><br><br>
+
+        <button type="submit">Submit</button>
+    </form>
+
+    {% if name and fortune %}
+        <h2>{{ name }}, your fortune is: {{ fortune }}</h2>
+    {% endif %}
+
+    <a href="/">Home</a>
+</body>
+</html>
